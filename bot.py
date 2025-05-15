@@ -1,17 +1,14 @@
 import logging
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, MessageHandler, filters
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 
-# Load .env file
+# Load env variables
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
-if not BOT_TOKEN:
-    print("❌ BOT_TOKEN not found. Check your .env file!")
-    exit()
-
+>>>>>>> 22de148e4496a4a8eaea8c7a84db91917c2110e5
 # Enable logging
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
