@@ -82,8 +82,12 @@ def main():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
-    print("🤖 Bot is running...")
-    app.run_polling()
 
-if __name__ == "__main__":
-    main()
+    print("🤖 Bot is running with webhook...")
+
+    app.run_webhook(
+        listen="0.0.0.0",
+        port=int(os.environ.get("PORT", 8443)),
+        webhook_url=f"https://<teraxfastbot.up.railway.app/{BOT_TOKEN}"
+    )
+
