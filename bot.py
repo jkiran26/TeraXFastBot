@@ -7,8 +7,7 @@ from dotenv import load_dotenv
 # Load env variables
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-
->>>>>>> 22de148e4496a4a8eaea8c7a84db91917c2110e5
+print("Running from GitHub")
 # Enable logging
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
